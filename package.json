@@ -1,0 +1,15 @@
+{
+  "name": "simple",
+  "dependencies": {
+    "ol": "^9.0.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "vite": "^3.2.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html"
+  }
+}

@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+      <script src="https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.0.0/ol.css">
+     <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+    <title>OpenLayers example</title>
+  </head>
+  <body>
+    <h2>OpenLayers Demo</h2>
+    
+    <h3>Select Map Type</h3>
+    <form name="chooseMap" >
+      <table>
+      <tr>
+      <td>
+      <input type="radio" name="mapType" value="osm" onClick="setMapType()" checked="checked"> OpenStreetMap<br>
+      </td>
+      <td>
+      <input type="radio" name="mapType" value="stamen" onClick="setMapType()"> Stamen<br>
+      </td>
+       <td>
+      <input type="radio" name="mapType" value="mapbox" onClick="setMapType()"> Mapbox (Vector Tiles)<br>
+      </td>
+      </tr>
+      </table>
+    </form>
+    <h3>Select Data to Display</h3>
+      <form name="chooseData" >
+      <table>
+      <tr>
+      <td>
+      <input type="checkbox" name="ztl" onClick="setMuseumData()"> Museums and Theatres <br>
+      </td>
+      <td>
+      <input type="checkbox" name="tlight" onClick="setHotSpotData()"> Hotspot Wifi<br>
+      </td>
+      <td>
+      <input type="checkbox" name="walkway" onClick="setSportData()"> Sport Areas <br>
+      </td>
+      <td>
+      <input type="checkbox" name="bike" onClick="setGreenData()"> Green Areas<br>
+      </td>
+      <td>
+      <input type="checkbox" name="street" onClick="setStreets()"> Streets Lenght (MapBox only)<br>
+      </td>
+      </tr>
+      </table>
+    </form>
+    
+    <h3>Performance</h3>
+      <table>
+      <tr>
+      <td>
+          <b>Loading time (in ms)</b>
+      </td>
+      <td>
+          XXX
+      </td>
+      </tr>
+      </table>
+    
+    <div id="map" class="map"></div>
+
+    <!-- <script type="text/javascript">
+    
+    
+      function setMapType() {
+         
+      }
+      
+      function setMuseumData() {
+        
+      }
+     
+      function setHotSpotData() {
+        
+      }
+      
+      function setGreenData() {
+        
+      }
+      
+      function setStreets() {
+           Style streets based on their length
+        < 1000 meters -> green color
+        >= 1000 meters, <2000 -> yellow color
+        > 2000 meters, red color
+      }
+   
+      </script> -->
+
+      <script src="index.js"></script>
+  </body>
+</html>

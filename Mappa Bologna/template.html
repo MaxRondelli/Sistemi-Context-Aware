@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+  <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+
+  <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+  </style>
+      
+  <!-- <script     src="https://github.com/openlayers/openlayers.github.io/tree/master/en/v6.13.0/build/ol.js" type="text/javascript">
+   </script> -->
+  
+   <script src="https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js"></script>
+
+  <title>OpenLayers example</title>
+  </head>
+  
+  <body>
+      
+      <h2>Map with GeoJSON Data</h2>
+      
+      <div id="map" class="map"></div>
+       
+      <script type="text/javascript">
+ 	  
+        // Map drawing
+        var map = new ol.Map({
+	       target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                source: new ol.source.OSM()
+                })
+            ],
+            // Replace <X,Y> with the maps coordinates
+            view: new ol.View({
+                center: ol.proj.fromLonLat([11.32699267751309, 44.499347446592225]),
+                zoom: 15
+       	    })
+        });
+
+        // Styling functions   
+        var _myStroke = new ol.style.Stroke({
+        color: "rgba(255,0,0,0.8)",
+        width: 1,
+      });
+
+      var myStyle = function (feature) {
+        var fillColor = feature.get("fill"); // Get the fill color from feature properties
+        var _myFill = new ol.style.Fill({
+          color: fillColor || "rgba(0, 0, 0, 0)", // Set default fill color if not provided
+        });
+
+        return new ol.style.Style({
+          stroke: _myStroke,
+          fill: _myFill,
+        });
+      };
+      
+        
+        var file = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              11.32699267751309,
+              44.499347446592225
+            ],
+            [
+              11.329562069905535,
+              44.49011762889657
+            ],
+            [
+              11.339586206281666,
+              44.486335716681936
+            ],
+            [
+              11.356310930629007,
+              44.48438007675716
+            ],
+            [
+              11.358059728681894,
+              44.485793402968085
+            ],
+            [
+              11.356431543633391,
+              44.50084463642935
+            ],
+            [
+              11.348386474815044,
+              44.50417066172503
+            ],
+            [
+              11.339641586241953,
+              44.50566883182532
+            ],
+            [
+              11.32699267751309,
+              44.499347446592225
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fill": "brown"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              11.328036503717328,
+              44.49558089955286
+            ],
+            [
+              11.341668773487555,
+              44.49440361468771
+            ],
+            [
+              11.341923101633256,
+              44.49658094988192
+            ],
+            [
+              11.337722490226525,
+              44.4966716954813
+            ],
+            [
+              11.342305515311125,
+              44.50549656883382
+            ],
+            [
+              11.339497902493605,
+              44.50577330507812
+            ],
+            [
+              11.326752163751507,
+              44.499308154069695
+            ],
+            [
+              11.328036503717328,
+              44.49558089955286
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fill": "blue"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              11.342050378751253,
+              44.4964901930353
+            ],
+            [
+              11.346251615348706,
+              44.49630840076691
+            ],
+            [
+              11.34638019322685,
+              44.49730737720532
+            ],
+            [
+              11.35684247790445,
+              44.49721677350843
+            ],
+            [
+              11.356720727175968,
+              44.500765439147955
+            ],
+            [
+              11.348299838854814,
+              44.5043122113201
+            ],
+            [
+              11.342433076543585,
+              44.50495054346038
+            ],
+            [
+              11.337722142835815,
+              44.496853270756304
+            ],
+            [
+              11.342050378751253,
+              44.4964901930353
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "fill": "orange"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              11.34205037875202,
+              44.49658095601467
+            ],
+            [
+              11.341796006100623,
+              44.494131761109315
+            ],
+            [
+              11.343194995719472,
+              44.49404119351959
+            ],
+            [
+              11.344466319196556,
+              44.49277193327055
+            ],
+            [
+              11.346119933260155,
+              44.49159195694713
+            ],
+            [
+              11.34586534019519,
+              44.49041301648015
+            ],
+            [
+              11.3489201038619,
+              44.48995655309011
+            ],
+            [
+              11.353497791757178,
+              44.48451343111458
+            ],
+            [
+              11.35604181094655,
+              44.4843318050695
+            ],
+            [
+              11.358081498099892,
+              44.48596205368577
+            ],
+            [
+              11.356842272921341,
+              44.497125815621644
+            ],
+            [
+              11.346380197221293,
+              44.497307377447726
+            ],
+            [
+              11.346378899785662,
+              44.49621759580782
+            ],
+            [
+              11.34205037875202,
+              44.49658095601467
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"fill": "green"},
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              11.35327202740828,
+              44.48470340930305
+            ],
+            [
+              11.349158019419008,
+              44.4900124305735
+            ],
+            [
+              11.345897198724288,
+              44.49038434102519
+            ],
+            [
+              11.34596170926406,
+              44.49168842679083
+            ],
+            [
+              11.343023742259476,
+              44.4940165300452
+            ],
+            [
+              11.341653164669196,
+              44.49424951242699
+            ],
+            [
+              11.32806474232413,
+              44.49569653222596
+            ],
+            [
+              11.329576179555858,
+              44.49024477179924
+            ],
+            [
+              11.339564272175323,
+              44.48633695042156
+            ],
+            [
+              11.35327202740828,
+              44.48470340930305
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}
+        // Loading GeoJSON File, replace XXXX with your variable
+        const vectorSource = new ol.source.Vector({
+            features: new ol.format.GeoJSON({
+                dataProjection: 'EPSG:4326',
+                featureProjection: 'EPSG:3857'
+            }).readFeatures(file)
+        });
+        
+        // Creating a vector Layer      
+        const vectorLayer = new ol.layer.Vector({
+            source: vectorSource,
+            style: myStyle
+        });
+    
+        // Loading the vector into the maps
+        vectorLayer.setVisible(true);
+        map.addLayer(vectorLayer);
+    
+    </script>
+  </body>
+</html>
