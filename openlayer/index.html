@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenLayer LAB</title>
+  </head>
+  <body>
+    <a class="skiplink" href="#map">Go to map</a>
+   
+
+    <h2>OpenLayers Demo</h2>
+    <form name="chooseMap" >
+      <table>
+      <tr>
+      <td>
+      <input type="radio" id="osm" checked="checked"> OpenStreetMap<br>
+      </td>
+      <td>
+      <input type="radio" id="stamen"> Stamen<br>
+      </td>
+       <td>
+      <input type="radio" id="mapbox"> Mapbox (Vector Tiles)<br>
+      </td>
+      </tr>
+      </table>
+    </form>
+    <h3>Select Data to Display</h3>
+      <form name="chooseData" >
+      <table>
+      <tr>
+      <td>
+      <input type="checkbox" id="ztl"> Museums and Theatres <br>
+      </td>
+      <td>
+      <input type="checkbox" id="tlight"> Hotspot Wifi<br>
+      </td>
+      <td>
+      <input type="checkbox" id="walkway"> Sport Areas <br>
+      </td>
+      <td>
+      <input type="checkbox" id="bike"> Green Areas<br>
+      </td>
+      <td>
+      <input type="checkbox" id="street"> Streets Lenght (MapBox only)<br>
+      </td>
+      </tr>
+      </table>
+    </form>
+
+    <div id="map" class="map" tabindex="0"></div>
+    <button id="zoom-out">Zoom out</button>
+    <button id="zoom-in">Zoom in</button>
+    
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
